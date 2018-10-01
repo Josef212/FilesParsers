@@ -201,14 +201,57 @@ void BinaryReadTest()
 
 	BinaryFile file(buf, size);
 
+	int i = 0;
+	float f = 0.0f;
+	long l = 0;
+	double d = 0.0;
+	bool b1 = false, b2 = true;
+	char c = 'a';
+	int strL = 0;
+	std::string str;
 
+	file.GetInt(i);
+	file.GetFloat(f);
+	file.GetLong(l);
+	file.GetDouble(d);
+	file.GetBool(b1);
+	file.GetBool(b2);
+	file.GetChar(c);
 
-	RELEASE_ARRAY(buf);
+	file.GetInt(strL);
+	file.GetString(str, strL);
+
+	cout << "Int readed: " << i << endl;
+	cout << "Float readed: " << f << endl;
+	cout << "Long readed: " << l << endl;
+	cout << "Double readed: " << d << endl;
+	cout << "Bool readed: " << b1 << endl;
+	cout << "Bool readed: " << b2 << endl;
+	cout << "Char readed: " << c << endl;
+	cout << "String readed: " << str.c_str() << " --- " << strL << endl;
 }
 
 void BinaryWriteTest()
 {
 	cout << "BINARY write test ---------------------------" << endl;
 
+	std::string h = "Hello world!";
 
+	BinaryFile bf;
+
+	bf.AddInt(5);
+	bf.AddFloat(0.5f);
+	bf.AddLong(299999);
+	bf.AddDouble(3.1415);
+	bf.AddBool(true);
+	bf.AddBool(false);
+	bf.AddChar('z');
+
+	bf.AddInt(h.size());
+	bf.AddString(h);
+
+	if (!WriteFile(BINARY_FILENAME, bf.Data(), bf.DataSize()))
+	{
+		cout << "ERROR writing binary file." << endl;
+	}
 }
