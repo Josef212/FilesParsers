@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="JsonFile">
+      <UniqueIdentifier>{c2641683-ac0e-4f70-9627-8feff10ae59a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JsonFile\jsoncpp">
+      <UniqueIdentifier>{10338285-e2e4-4735-bf30-d5d826a6d4f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BinaryFile">
+      <UniqueIdentifier>{ba8bcde5-844f-40a8-bcb2-e1c6a64cb4ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp\jsoncpp.cpp">
+      <Filter>JsonFile\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonFile.cpp">
+      <Filter>JsonFile</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryFile.cpp">
+      <Filter>BinaryFile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jsoncpp\json.h">
+      <Filter>JsonFile\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\json-forwards.h">
+      <Filter>JsonFile\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonFile.h">
+      <Filter>JsonFile</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryFile.h">
+      <Filter>BinaryFile</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
