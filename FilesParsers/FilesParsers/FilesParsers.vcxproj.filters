@@ -41,6 +41,9 @@
     <ClCompile Include="pugixml-1.9\src\pugixml.cpp">
       <Filter>XmlFile\Pugi-xml</Filter>
     </ClCompile>
+    <ClCompile Include="XmlFile.cpp">
+      <Filter>XmlFile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jsoncpp\json.h">
@@ -63,6 +66,9 @@
     </ClInclude>
     <ClInclude Include="pugixml-1.9\contrib\foreach.hpp">
       <Filter>XmlFile\Pugi-xml</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlFile.h">
+      <Filter>XmlFile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

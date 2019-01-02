@@ -2,6 +2,7 @@
 
 #include "JsonFile.h"
 #include "BinaryFile.h"
+#include "XmlFile.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ using namespace std;
 
 #define JSON_FILENAME "data.json"
 #define BINARY_FILENAME "file.f"
+#define XML_FILENAME "xml_file.xml"
 
 #define RELEASE( x )\
 	{\
@@ -45,6 +47,9 @@ void JsonWriteTest();
 void BinaryReadTest();
 void BinaryWriteTest();
 
+void XmlReadTest();
+void XmlWriteText();
+
 // ==============================================================
 
 int main(int argc, char** argv)
@@ -59,6 +64,8 @@ int main(int argc, char** argv)
 			<< "\tb) Json write test" << endl
 			<< "\tc) Binary read test (only if write test done before)" << endl
 			<< "\td) Binary write test" << endl
+			<< "\te) XML read test (only if write test done before)" << endl
+			<< "\tf) XML write test" << endl
 			<< "\tq) Exit" << endl << endl;
 
 		string answer;
@@ -70,6 +77,8 @@ int main(int argc, char** argv)
 		else if (answer == "b") JsonWriteTest();
 		else if (answer == "c") BinaryReadTest();
 		else if (answer == "d") BinaryWriteTest();
+		else if (answer == "e") XmlReadTest();
+		else if (answer == "f") XmlWriteText();
 		else if (answer == "q") exit = true;
 		else cout << "Invalid option." << endl << endl;
 			
@@ -253,5 +262,39 @@ void BinaryWriteTest()
 	if (!WriteFile(BINARY_FILENAME, bf.Data(), bf.DataSize()))
 	{
 		cout << "ERROR writing binary file." << endl;
+	}
+}
+
+void XmlReadTest()
+{
+	
+
+
+
+}
+
+void XmlWriteText()
+{
+	cout << "XML write text ---------------------------" << endl;
+
+	XmlFile file;
+
+	file.AddAttribute<int>("k1", 2);
+	file.AddAttribute<float>("k2", 3.2f);
+	file.AddAttribute<const char*>("k3", "wuaaa");
+
+	XmlFile k4;
+	for (int i = 0; i < 6; ++i) k4.AddAttribute<int>(std::to_string(i).c_str(), (int)a[i]);
+	file.AddChild("k4", k4);
+
+	XmlFile k5;
+	for (int i = 0; i < 4; ++i) k5.AddAttribute<float>(std::to_string(i).c_str(), (float)b[i]);
+	file.AddChild("k5", k5);
+
+	auto buf = file.Write();
+
+	if (!WriteFile(XML_FILENAME, (char*)buf.c_str(), buf.size() + 1))
+	{
+		cout << "ERROR writing XML file." << endl;
 	}
 }
