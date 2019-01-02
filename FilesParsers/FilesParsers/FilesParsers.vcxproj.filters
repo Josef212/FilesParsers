@@ -18,6 +18,12 @@
     <Filter Include="BinaryFile">
       <UniqueIdentifier>{ba8bcde5-844f-40a8-bcb2-e1c6a64cb4ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XmlFile">
+      <UniqueIdentifier>{884f34c2-eeb8-4d67-a7de-ad974559b086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XmlFile\Pugi-xml">
+      <UniqueIdentifier>{22dcbcba-1e03-4ae3-a50c-6524d2c4c108}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +38,9 @@
     <ClCompile Include="BinaryFile.cpp">
       <Filter>BinaryFile</Filter>
     </ClCompile>
+    <ClCompile Include="pugixml-1.9\src\pugixml.cpp">
+      <Filter>XmlFile\Pugi-xml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jsoncpp\json.h">
@@ -45,6 +54,15 @@
     </ClInclude>
     <ClInclude Include="BinaryFile.h">
       <Filter>BinaryFile</Filter>
+    </ClInclude>
+    <ClInclude Include="pugixml-1.9\src\pugiconfig.hpp">
+      <Filter>XmlFile\Pugi-xml</Filter>
+    </ClInclude>
+    <ClInclude Include="pugixml-1.9\src\pugixml.hpp">
+      <Filter>XmlFile\Pugi-xml</Filter>
+    </ClInclude>
+    <ClInclude Include="pugixml-1.9\contrib\foreach.hpp">
+      <Filter>XmlFile\Pugi-xml</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

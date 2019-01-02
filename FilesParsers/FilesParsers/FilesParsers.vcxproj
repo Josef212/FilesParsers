@@ -119,12 +119,16 @@
     <ClCompile Include="jsoncpp\jsoncpp.cpp" />
     <ClCompile Include="JsonFile.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pugixml-1.9\src\pugixml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryFile.h" />
     <ClInclude Include="jsoncpp\json-forwards.h" />
     <ClInclude Include="jsoncpp\json.h" />
     <ClInclude Include="JsonFile.h" />
+    <ClInclude Include="pugixml-1.9\contrib\foreach.hpp" />
+    <ClInclude Include="pugixml-1.9\src\pugiconfig.hpp" />
+    <ClInclude Include="pugixml-1.9\src\pugixml.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
